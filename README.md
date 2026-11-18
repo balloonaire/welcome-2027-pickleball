@@ -1,20 +1,14 @@
-# OGX WELCOME 2027 — Cinematic Golden Rally V10
+# OGX Holiday Activity — Rally 2026 (Version 11)
 
-Updates:
-- Removed OGX text from the opening paddle.
-- Replaced illustrated SVG paddle with a realistic photographic paddle cut out from the supplied pickleball photograph (`real_pickleball_paddle.png`).
-- Added a gold art-deco ornamental border around the **entire mobile viewport**, with corner accents, inner trim and side rails.
-- Opening button now says only **STRIKE**.
-- Preserved the invitation's reveal, fireworks, jazz MP3, event details and WhatsApp RSVP to +60 12-687 7643.
+Updated wording within the V10 full-screen invitation:
+- PRIVATE INVITATION → HOLIDAY ACTIVITY
+- The golden rally begins → The end of a rally 2026
+- WELCOME 2027 → RALLY 2026
+- A NIGHT TO REMEMBER → THAT MOMENT
+- One extraordinary celebration → The last moment
+- Snacks → Bring childhood snacks or tiny titbits
+- RESERVE YOUR PLACE → LET'S DO THIS!
 
-## Publish on GitHub Pages
-Upload all five files to the root of your existing `main` branch:
-- `index.html`
-- `real_pickleball_paddle.png` (new)
-- `pickleball_hero.webp`
-- `ogx_midnight_jazz.mp3`
-- `README.md`
+Existing event date (Sunday, 27 December 2026), BASE Petaling Jaya venue, paddle-strike animation, full-screen gold frame, jazz MP3 and WhatsApp RSVP number (+60 12-687 7643) are preserved.
 
-Website: https://balloonaire.github.io/welcome-2027-pickleball/
-
-Do not delete the image or MP3 files; the HTML references them by filename.
+Upload all five files from this package to the main branch root of https://github.com/balloonaire/welcome-2027-pickleball, replacing index.html and README.md. Website URL remains https://balloonaire.github.io/welcome-2027-pickleball/ unless repository name changes.
