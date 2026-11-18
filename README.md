@@ -9,3 +9,6 @@ Performance: frame-rate-independent physics, 15%-slower V22 ball speed, capped p
 Publish: upload index.html, zipper_closed.webp, zipper_open.webp, rally_background_music.mp3, README.md to the main branch root at https://github.com/balloonaire/welcome-2027-pickleball. Published URL: https://balloonaire.github.io/welcome-2027-pickleball/.
 
 Confirm you have rights to publicly host the supplied branded images and audio.
+
+## Version 25 update
+Removed the OPEN ZIPPER button and its event handler. Guests still drag the gold zipper directly; keyboard slider support remains.
