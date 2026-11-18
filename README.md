@@ -1,14 +1,12 @@
-# OGXTC Cheer — V24 Ultimate Mobile Fun
+# OGXTC Cheer — Version 26
 
-Guest journey: drag the gold zipper on the bag photo (music starts on first touch); full-screen bouncing pickleball with impact animation, playful awards, 3 chances and Skip; MANA MAIN ! reveals the pocket invitation; pull/swipe up and tap event details; RSVP opens WhatsApp.
+Changes from V25:
+- Surprise pickleball pop-out peak is now 1.3× normal size (30% larger).
+- Keeps the interactive PULL UP YOUR INVITATION control and red bag-pocket information section.
+- Attempts to start the uploaded background MP3 when the opening page first loads. Mobile browsers may block autoplay with sound; if blocked, the first screen interaction retries playback. Music ON/OFF remains available.
+- RSVP field now reads NUMBER OF GUESTS INCLUDE SELF and collects the total number of guests, including the respondent.
 
-Event: Sunday, 27 December 2026, 6:00 PM at BASE, Petaling Jaya. Friendly rallies, mini activity, bring childhood snacks or tiny titbits. Dress vibe: Top fancy dresser — any creative colour. Form: REAL NAME LAH and HOW MANY HANDS/PAX. WhatsApp +60 12 687 7643.
+All other V25 assets and features are retained.
 
-Performance: frame-rate-independent physics, 15%-slower V22 ball speed, capped particles, mobile landscape adjustments, safe-area spacing, reduced-motion preference, keyboard and skip options. Audio begins after first zipper interaction subject to browser policy.
-
-Publish: upload index.html, zipper_closed.webp, zipper_open.webp, rally_background_music.mp3, README.md to the main branch root at https://github.com/balloonaire/welcome-2027-pickleball. Published URL: https://balloonaire.github.io/welcome-2027-pickleball/.
-
-Confirm you have rights to publicly host the supplied branded images and audio.
-
-## Version 25 update
-Removed the OPEN ZIPPER button and its event handler. Guests still drag the gold zipper directly; keyboard slider support remains.
+Publish all five files to the root of https://github.com/balloonaire/welcome-2027-pickleball.
+Confirm you have permission to publicly distribute the included imagery and music.
