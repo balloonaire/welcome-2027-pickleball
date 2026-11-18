@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101d27">
+<title>Welcome 2027 | OGX Pickleball Celebration</title>
+<style>
+:root{--ink:#0b1426;--lime:#e7c47b;--pink:#c6e6d4;--cream:#fff8e9;--muted:#bac4d1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--cream);background:radial-gradient(circle at 50% -10%,#283d5a 0%,#101d34 44%,#070f20 100%);font-family:system-ui,-apple-system,Segoe UI,sans-serif}button,input{font:inherit}button,a{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--lime);outline-offset:4px}
+main{max-width:540px;margin:auto;padding:26px 16px 65px;text-align:center;overflow:hidden}.eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.25em;color:var(--lime)}h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(2.7rem,10vw,4.4rem);line-height:1.04;margin:16px 0 10px}.accent{color:var(--lime);font-style:italic}.subtitle{color:#d0ddda;line-height:1.5}.spark{position:fixed;pointer-events:none;font-size:30px;opacity:.12;animation:drift 9s ease-in-out infinite alternate}.s1{left:3%;top:16%}.s2{right:2%;top:55%;animation-delay:-4s}.s3{left:5%;top:80%;animation-delay:-2s}@keyframes drift{to{transform:translateY(-32px) rotate(40deg)}}
+.stage{width:min(100%,390px);aspect-ratio:3/4;margin:32px auto 22px;position:relative;perspective:1600px;filter:drop-shadow(0 30px 25px #0009);cursor:pointer}.inside{position:absolute;inset:0;background:linear-gradient(145deg,#fffaf0,#e8eadf);color:#162c2f;border:4px solid #c6a56a;border-radius:10px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:8% 6%;overflow:hidden}.inside:before{content:"";position:absolute;inset:15px;border:1px solid #c6a56a;border-radius:5px;pointer-events:none}.inside .tiny{font-size:.67rem;letter-spacing:.22em;font-weight:800;color:#8c7041}.inside h2{font:italic clamp(2rem,8vw,3.2rem) Georgia,serif;margin:13px 0 8px;line-height:1}.inside p{font-size:.86rem;line-height:1.45;margin:5px 0}.inside .bigdate{font-weight:900;font-size:1.12rem;margin-top:15px}.ball{width:74px;height:74px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#f4ffad,var(--lime) 70%,#9abd26);box-shadow:inset -8px -8px 14px #6a8d2a44,0 10px 20px #0003;position:relative;flex:none}.ball:after{content:"";position:absolute;inset:16px;border:3px dotted #4c642d66;border-radius:50%}.ball.small{width:40px;height:40px}.ball.small:after{inset:8px;border-width:2px}
+.doors{position:absolute;inset:0;display:flex;pointer-events:none;transform-style:preserve-3d}.door{width:50%;height:100%;position:relative;overflow:hidden;backface-visibility:hidden;background:linear-gradient(145deg,#18395b,#0f2543 55%,#09182d);border:2px solid #d9b778;transition:transform 1.4s cubic-bezier(.18,.8,.15,1);transform-style:preserve-3d}.left{border-radius:10px 0 0 10px;transform-origin:left center}.right{border-radius:0 10px 10px 0;transform-origin:right center}.door:before{content:"";position:absolute;inset:12px;border:1px solid #fff8;pointer-events:none}.door .word{position:absolute;top:26%;font:italic 1.5rem Georgia,serif;color:#fffaf0}.left .word{right:12px}.right .word{left:12px}.door .court{position:absolute;bottom:13%;height:31%;width:170%;border:3px solid #fff9;transform:rotate(-22deg);background:linear-gradient(90deg,transparent 49%,#fff9 49% 51%,transparent 51%),linear-gradient(0deg,transparent 49%,#fff9 49% 51%,transparent 51%);opacity:.8}.left .court{right:-30%}.right .court{left:-30%}.door .arc{position:absolute;width:135px;height:135px;border:16px solid #e7c47b;border-radius:50%;top:45%;opacity:.5}.left .arc{right:-70px}.right .arc{left:-70px}.stage.open .left{transform:rotateY(-165deg)}.stage.open .right{transform:rotateY(165deg)}.seal{position:absolute;z-index:3;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--lime);color:#22312b;border:5px solid #fff6e6;border-radius:50%;width:88px;height:88px;display:grid;place-items:center;font-size:2.8rem;box-shadow:0 4px 20px #0006;transition:opacity .25s}.stage.open .seal{opacity:0;pointer-events:none}.controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.btn{border:0;border-radius:100px;padding:14px 22px;background:var(--lime);color:#1c3029;font-weight:900;min-height:49px;cursor:pointer}.btn.secondary{background:#ffffff15;border:1px solid #ffffff55;color:#fff}.hint{font-size:.78rem;color:var(--muted);margin-top:12px}
+.details{background:#ffffff0c;border:1px solid #ffffff2b;border-radius:24px;padding:24px;margin:34px 0 24px}.details h2,.rsvp h2{font:italic 2.25rem Georgia,serif;margin:5px 0 16px}.line{padding:13px 0;border-bottom:1px solid #ffffff22}.line:last-child{border:0}.line strong{display:block;color:var(--lime);font-size:.69rem;letter-spacing:.18em;margin-bottom:5px}.line span{line-height:1.5}.rsvp{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(145deg,#f4e6c6,#ddc391 48%,#b89b66);color:#192a39;border-radius:28px;padding:30px 23px 26px;box-shadow:0 20px 40px #0004}.rsvp:before,.rsvp:after{content:"✦";position:absolute;font-size:110px;color:#fff3;z-index:-1;animation:twinkle 3s ease-in-out infinite alternate}.rsvp:before{top:-36px;right:-12px}.rsvp:after{bottom:-52px;left:-12px;animation-delay:-1.4s}@keyframes twinkle{to{transform:rotate(35deg) scale(1.2);opacity:.35}}.rsvp .tag{font-size:.73rem;font-weight:900;letter-spacing:.22em}.rsvp h2{font-size:2.65rem;margin:10px 0}.rsvp .desc{font-size:.9rem;line-height:1.5}.rsvp .paddle{font-size:3.3rem;animation:bob 2.8s ease-in-out infinite;display:inline-block}@keyframes bob{50%{transform:translateY(-10px) rotate(12deg)}}.field{text-align:left;margin:17px 0}.field label{display:block;font-weight:800;font-size:.85rem;margin-bottom:7px}.field input{width:100%;border:2px solid #fff9;background:#fffdf5;color:#1e2830;padding:14px;border-radius:14px;font-size:1rem}.send{display:flex;justify-content:center;align-items:center;gap:10px;width:100%;border:0;background:#153b37;color:white;font-size:1.02rem;font-weight:900;padding:16px;border-radius:16px;box-shadow:0 7px 0 #0a2522;cursor:pointer;transition:transform .2s,box-shadow .2s;animation:pulse 2.6s infinite}.send:active{transform:translateY(5px);box-shadow:0 2px 0 #0a2522}@keyframes pulse{50%{filter:brightness(1.13)}}.status{min-height:24px;font-size:.85rem;font-weight:700;margin:16px 0 0}.fine{font-size:.77rem;line-height:1.5;opacity:.85}.footer{margin-top:25px;font-size:.75rem;color:#9db4b2}a{color:inherit}@media(max-width:360px){main{padding:18px 10px 48px}.inside h2{font-size:1.9rem}.inside p{font-size:.75rem}.door .word{font-size:1.2rem}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition-duration:.01ms!important}}
+.door:after{content:"";position:absolute;top:9%;bottom:9%;width:1px;background:#e7c47b99}.left:after{right:18px}.right:after{left:18px}
+.stage{filter:drop-shadow(0 28px 30px #000b)}.seal{background:#e7c47b;border-color:#fdf5e4;font-size:2.1rem}
+.eyebrow{letter-spacing:.35em}.rsvp{border:1px solid #fff7d4;box-shadow:0 18px 48px #0007}.rsvp h2{font-size:2.8rem}
+.inside .bigdate{color:#6c522d}.inside h2{color:#193b47}.btn{letter-spacing:.02em}
+
+/* 2027 animated campaign makeover */
+body{background:radial-gradient(ellipse at 50% 0%,#2d1d5e 0%,#121534 45%,#070d20 100%)}
+main{position:relative;z-index:1}
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.eyebrow{color:#fbe58b;text-shadow:0 0 18px #ffe781aa}
+h1{font-size:clamp(3rem,11vw,5rem);text-shadow:0 0 25px #9c68ff77}
+.accent{color:#f9d779}
+.stage{filter:drop-shadow(0 0 35px #b781ff66) drop-shadow(0 25px 20px #0009)}
+.door{background:linear-gradient(145deg,#552d8c,#241b56 55%,#141c42)}
+.seal{background:#ffe07b;animation:sealglow 2s ease-in-out infinite alternate}
+@keyframes sealglow{to{box-shadow:0 0 35px #ffdc83,0 0 65px #d783ff}}
+.inside{background:radial-gradient(circle at 50% 30%,#fff9e8,#eadcc8)}
+.rsvp{background:linear-gradient(145deg,#ffdc8d,#e9a4d2 52%,#a68eff);color:#271f46}
+.rsvp .paddle{animation:bob 2s ease-in-out infinite}
+.rsvp:before,.rsvp:after{color:#fff8}
+.send{background:linear-gradient(100deg,#0a955b,#11b86c,#0a955b);background-size:200% 100%;animation:shine 2.5s linear infinite,pulse 2.6s infinite}
+@keyframes shine{to{background-position:200% 0}}
+.yearmark{display:inline-block;margin:8px 0 2px;font-weight:1000;letter-spacing:.12em;font-size:clamp(3.8rem,17vw,6.8rem);line-height:1;background:linear-gradient(100deg,#fff0a6,#ffbd62,#fff8dc,#d9b1ff);background-size:250%;background-clip:text;-webkit-background-clip:text;color:transparent;animation:goldshift 5s linear infinite;filter:drop-shadow(0 0 14px #ffcc6470)}
+@keyframes goldshift{to{background-position:250%}}
+.marquee{margin:15px auto 0;padding:10px 12px;border-block:1px solid #ffffff55;color:#f9e4b2;letter-spacing:.16em;font-size:.65rem;font-weight:800}
+.orbitball{position:absolute;top:8%;right:4%;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#faffbb,#c7f66b 70%);box-shadow:0 0 25px #c9ff78;animation:orbit 5s ease-in-out infinite alternate;pointer-events:none}
+@keyframes orbit{to{transform:translate(-42px,25px) rotate(180deg)}}
+@media(prefers-reduced-motion:reduce){.yearmark,.seal,.orbitball,.send{animation:none!important}}
+#music[aria-pressed="true"]{background:#f8d77d;color:#18213d;border-color:#f8d77d;box-shadow:0 0 18px #f8d77d66}
+</style></head><body><canvas id="fx" aria-hidden="true"></canvas>
+<span class="spark s1" aria-hidden="true">✦</span><span class="spark s2" aria-hidden="true">✧</span><span class="spark s3" aria-hidden="true">✦</span>
+<main><div class="eyebrow" id="brand">OGX TRAINER CLUB</div><h1>Goodbye 2026.<br><span class="accent">Hello 2027!</span></h1><div class="yearmark" aria-label="2027">2027</div><div class="marquee">✦ PICKLEBALL ✦ CELEBRATION ✦ GOOD VIBES ✦</div><p class="subtitle">One last rally for 2026. A sparkling welcome to 2027!</p>
+<div class="stage" id="stage" role="button" tabindex="0" aria-label="Tap to open or close invitation" aria-expanded="false"><div class="orbitball" aria-hidden="true"></div><div class="inside"><div class="tiny">YOU'RE CORDIALLY INVITED</div><div class="ball" aria-hidden="true" style="margin-top:14px"></div><h2 id="eventTitle">WELCOME 2027</h2><p id="tagline">A festive pickleball countdown celebration</p><p class="bigdate" id="eventDate">Sunday · 27 December 2026</p><p id="eventTime">Sunday Evening · Time TBA</p><p id="eventVenue">Venue to be announced</p><p style="font-size:.73rem;color:#7c755d">ONE LAST RALLY FOR 2026 · CHEERS TO 2027</p></div><div class="doors" aria-hidden="true"><div class="door left"><span class="word">HELLO</span><div class="court"></div><div class="arc"></div></div><div class="door right"><span class="word">2027!</span><div class="court"></div><div class="arc"></div></div></div><div class="seal" aria-hidden="true">🏓</div></div>
+<div class="controls"><button class="btn" id="toggle" aria-expanded="false">✦ Reveal the Invitation</button><button class="btn secondary" id="share">Share Invitation</button><button class="btn secondary" id="music" aria-pressed="false" title="Toggle original celebration music">♫ Music Off</button></div><p class="hint">Tap the card to open / close ✨</p>
+<section class="details"><h2>The Celebration Lineup</h2><div class="line"><strong>WHEN</strong><span id="detailDate">Sunday, 27 December 2026 · Evening (time TBA)</span></div><div class="line"><strong>WHERE</strong><span id="detailVenue">Venue to be announced</span></div><div class="line"><strong>WHAT TO EXPECT</strong><span id="detailActivities">Friendly rallies, sparkling lights, music & a New Year celebration</span></div><div class="line"><strong>DRESS VIBE</strong><span id="detailDress">Sporty festive · Gold, white or neon accents</span></div></section>
+<section class="rsvp" id="rsvp"><div class="tag">YOUR 2027 CELEBRATION PASS</div><div class="paddle" aria-hidden="true">✦🏓✦</div><h2>I’m In for 2027!</h2><p class="desc">Join the celebration! Enter your name and contact number to RSVP on WhatsApp.</p><form id="rsvpForm"><div class="field"><label for="guest">✨ Your name</label><input id="guest" name="guest" autocomplete="name" maxlength="100" placeholder="Your full name" required></div><div class="field"><label for="phone">📱 Contact number</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="25" placeholder="+60 12 345 6789" required></div><button class="send" type="submit">💬 Send RSVP via WhatsApp <span aria-hidden="true">↗</span></button><p class="status" id="status" role="status" aria-live="polite"></p></form><p class="fine">WhatsApp will open with your pre-filled RSVP. Tap Send in WhatsApp to confirm. Your details are not stored on this website.</p></section>
+<p class="footer">WELCOME 2027 · AN OGX TRAINER CLUB INVITATION</p></main>
+<script>
+/* EDIT HERE: event information and your WhatsApp recipient number.
+   whatsappNumber: international digits ONLY, no +, spaces or leading zero.
+   Example for a Malaysian number: 60123456789 (example only; replace it). */
+const EVENT={
+ company:"OGX TRAINER CLUB",
+ title:"WELCOME 2027",
+ tagline:"A festive pickleball countdown celebration",
+ date:"Sunday · 27 December 2026",
+ time:"Sunday Evening · Time TBA",
+ venue:"Venue to be announced",
+ activities:"Friendly rallies, sparkling lights, music & a New Year celebration",
+ dressCode:"Sporty festive · Gold, white or neon accents",
+ whatsappNumber:"", // REQUIRED: enter actual organizer WhatsApp number before publishing
+};
+const $=id=>document.getElementById(id);
+$("brand").textContent=EVENT.company;$("eventTitle").textContent=EVENT.title;$("tagline").textContent=EVENT.tagline;$("eventDate").textContent=EVENT.date;$("eventTime").textContent=EVENT.time;$("eventVenue").textContent=EVENT.venue;$("detailDate").textContent=EVENT.date+" · "+EVENT.time;$("detailVenue").textContent=EVENT.venue;$("detailActivities").textContent=EVENT.activities;$("detailDress").textContent=EVENT.dressCode;
+let open=false;function setOpen(value){open=value;$("stage").classList.toggle("open",open);$("stage").setAttribute("aria-expanded",String(open));$("toggle").setAttribute("aria-expanded",String(open));$("toggle").textContent=open?"✦ Close Invitation":"✦ Reveal the Invitation"}
+$("toggle").addEventListener("click",()=>setOpen(!open));$("stage").addEventListener("click",()=>setOpen(!open));$("stage").addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();setOpen(!open)}});
+$("share").addEventListener("click",async()=>{const data={title:EVENT.title,text:"You're invited! "+EVENT.date,url:location.href};try{if(navigator.share)await navigator.share(data);else if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(location.href);$("share").textContent="Link Copied!";setTimeout(()=>$("share").textContent="Share Invitation",2000)}else window.prompt("Copy invitation URL:",location.href)}catch(e){if(e.name!=="AbortError")window.prompt("Copy invitation URL:",location.href)}});
+$("rsvpForm").addEventListener("submit",e=>{e.preventDefault();const name=$("guest").value.trim();const phone=$("phone").value.trim();const recipient=EVENT.whatsappNumber.replace(/\D/g,"");if(!name||!phone){$("status").textContent="Please fill in your name and contact number.";return}if(!/^\+?[\d\s().-]{7,25}$/.test(phone)||phone.replace(/\D/g,"").length<7){$("status").textContent="Please enter a valid contact number.";return}if(!/^\d{8,15}$/.test(recipient)){$("status").textContent="Organizer setup needed: add the WhatsApp number in EVENT.whatsappNumber before RSVPs can be sent.";return}const message=["🎆 *WELCOME 2027 PICKLEBALL — RSVP*","✨ Event: "+EVENT.title,"📅 Date: "+EVENT.date,"👤 Name: "+name,"📱 Contact: "+phone,"","I'd love to join the fun! 🎉"].join("\n");const url="https://wa.me/"+recipient+"?text="+encodeURIComponent(message);$("status").textContent="Opening WhatsApp… please tap Send to complete your RSVP.";window.location.href=url});
+
+// Ambient celebration: lightweight animated fireworks and confetti.
+// Disable automatically for visitors who prefer reduced motion.
+(()=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+const canvas=document.getElementById('fx'),ctx=canvas.getContext('2d');
+if(!ctx)return;let W=0,H=0,particles=[],last=0,frame=0;
+const palette=['#ffdf86','#f49bd6','#bca4ff','#a8ffdb','#fff8e3'];
+function resize(){const d=Math.min(devicePixelRatio||1,1.5);W=innerWidth;H=innerHeight;canvas.width=Math.round(W*d);canvas.height=Math.round(H*d);ctx.setTransform(d,0,0,d,0,0)}
+addEventListener('resize',resize,{passive:true});resize();
+function burst(x,y){for(let i=0;i<27;i++){let a=Math.random()*Math.PI*2,v=1+Math.random()*3;particles.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,life:60+Math.random()*25,age:0,color:palette[i%palette.length],size:1.4+Math.random()*2.3})}}
+function draw(t){if(document.hidden){requestAnimationFrame(draw);return}
+ctx.clearRect(0,0,W,H);frame++;
+if(t-last>1800&&particles.length<140){burst(W*(.12+Math.random()*.76),H*(.08+Math.random()*.38));last=t}
+for(const q of particles){q.x+=q.vx;q.y+=q.vy;q.vy+=.018;q.age++;ctx.globalAlpha=Math.max(0,1-q.age/q.life);ctx.fillStyle=q.color;ctx.beginPath();ctx.arc(q.x,q.y,q.size,0,Math.PI*2);ctx.fill()}
+ctx.globalAlpha=1;particles=particles.filter(q=>q.age<q.life);requestAnimationFrame(draw)}
+requestAnimationFrame(draw);
+})();
+
+// Original synthesized instrumental celebration loop, no external audio file or copyright dependency.
+// Browsers require a user gesture before playing audio. Starts when the guest opens the invitation.
+(()=>{
+const button=document.getElementById('music'),openButton=document.getElementById('toggle'),card=document.getElementById('stage');
+let audio=null,master=null,playing=false,clock=null,step=0;
+const AudioContextClass=window.AudioContext||window.webkitAudioContext;
+const melody=[76,null,79,81,79,76,74,null,76,79,83,81,79,null,76,null,
+  74,null,76,79,81,79,76,null,74,76,79,76,74,null,72,null];
+const bass=[48,48,53,53,45,45,43,43];
+function tone(freq,when,duration,type,volume){
+const osc=audio.createOscillator(),gain=audio.createGain();
+osc.type=type;osc.frequency.setValueAtTime(freq,when);
+gain.gain.setValueAtTime(0.0001,when);
+gain.gain.exponentialRampToValueAtTime(volume,when+.018);
+gain.gain.exponentialRampToValueAtTime(.0001,when+duration);
+osc.connect(gain);gain.connect(master);osc.start(when);osc.stop(when+duration+.03);
+}
+const hz=n=>440*Math.pow(2,(n-69)/12);
+function beat(){
+if(!audio||!playing)return;
+const t=audio.currentTime+.02;
+const note=melody[step%melody.length];
+if(note!=null)tone(hz(note),t,.19,'triangle',.13);
+if(step%4===0){tone(hz(bass[Math.floor(step/4)%bass.length]),t,.38,'sine',.12);tone(hz(60+([0,5,9,7][Math.floor(step/8)%4])),t,.5,'sine',.055)}
+if(step%2===0)tone(130,t,.055,'triangle',.035);
+step++;
+}
+async function start(){
+if(!AudioContextClass){button.textContent='♫ Audio unavailable';return}
+try{
+if(!audio){audio=new AudioContextClass();master=audio.createGain();master.gain.value=.58;master.connect(audio.destination)}
+await audio.resume();if(playing)return;
+playing=true;button.setAttribute('aria-pressed','true');button.textContent='♫ Music On';
+beat();clock=setInterval(beat,230);
+}catch(e){button.textContent='♫ Audio unavailable'}
+}
+function stop(){
+playing=false;if(clock){clearInterval(clock);clock=null}
+if(audio&&master)master.gain.setTargetAtTime(0,audio.currentTime,.06);
+button.setAttribute('aria-pressed','false');button.textContent='♫ Music Off';
+}
+button.addEventListener('click',async()=>{if(playing){stop()}else{if(master&&audio)master.gain.setTargetAtTime(.58,audio.currentTime,.05);await start()}});
+function onReveal(){if(!playing&&!window.__musicManuallyMuted)start()}
+button.addEventListener('click',()=>{window.__musicManuallyMuted=!playing});
+openButton.addEventListener('click',()=>{if(card.classList.contains('open'))onReveal()});
+card.addEventListener('click',()=>{if(card.classList.contains('open'))onReveal()});
+card.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&card.classList.contains('open'))onReveal()});
+document.addEventListener('visibilitychange',()=>{if(audio&&master){master.gain.setTargetAtTime(document.hidden?0:(playing?.58:0),audio.currentTime,.07)}});
+})();
+</script></body></html>
