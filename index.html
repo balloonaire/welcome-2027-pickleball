@@ -206,45 +206,41 @@ form{margin-top:22px;text-align:left}label{display:block;font-size:10px;letter-s
 <div class="detail" id="detail"><div class="detailInner"><div class="sectionTitle">THE EVENING'S LINE-UP</div><p class="tapPrompt">Tap each moment to reveal its details.</p><details class="entry moment"><summary><span class="symbol">📅</span><b>WHEN</b><span class="momentPlus">＋</span></summary><div class="momentBody">Sunday, 27 December 2026 · 6:00 PM start</div></details><details class="entry moment"><summary><span class="symbol">📍</span><b>WHERE</b><span class="momentPlus">＋</span></summary><div class="momentBody">BASE, Petaling Jaya</div></details><details class="entry moment"><summary><span class="symbol">🏓</span><b>WHAT TO EXPECT</b><span class="momentPlus">＋</span></summary><div class="momentBody">Friendly rallies, mini activity &amp; bring childhood snacks or tiny titbits</div></details><details class="entry moment"><summary><span class="symbol">✨</span><b>DRESS VIBE</b><span class="momentPlus">＋</span></summary><div class="momentBody">Top fancy dresser — any creative colour!</div></details>
 <div class="sectionTitle">LET'S DO THIS!</div><form id="form"><label>REAL NAME LAH<input id="name" name="name" required maxlength="80" autocomplete="name" placeholder="Your real name"></label><label>HOW MANY HANDS/PAX<input id="pax" name="pax" type="number" min="1" max="50" step="1" required inputmode="numeric" placeholder="Number of guests"></label><button class="rsvpBtn" type="submit">✦ RSVP VIA WHATSAPP ✦</button><div id="status" role="status" aria-live="polite"></div></form></div></div></article></main>
 <div class="vinylWidget"><button class="vinyl" id="vinyl" type="button" aria-label="Play or pause background music"><span class="vinylCenter">♫</span></button><span id="vinylText">YOUR MUSIC · TAP TO PLAY</span></div>
-<audio id="track" src="rally_background_music.mp3" preload="auto" autoplay loop playsinline></audio>
+<audio id="track" src="rally_background_music.mp3" preload="auto" loop playsinline></audio>
 <script>
 'use strict';const $=id=>document.getElementById(id);const gate=$('gate'),stage=$('stage'),card=$('card'),track=$('track'),music=$('music'),vinyl=$('vinyl'),fx=$('fx'),ctx=fx.getContext('2d');const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;let W=0,H=0,parts=[],next=0,opened=false,gameActive=false,gameAttempt=0,ballPosition=0,ballDirection=1,previousFrame=0,gameFrame=0,gateTriggered=false;
 function resize(){W=innerWidth;H=innerHeight;const scale=Math.min(devicePixelRatio||1,2);fx.width=W*scale;fx.height=H*scale;ctx.setTransform(scale,0,0,scale,0,0)}addEventListener('resize',resize);resize();
 const colors=['#ffe4a4','#fff6e4','#ff8bb0','#d6f653','#f9bb6b'];function burst(x,y,n=70){if(reduced)return;for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,s=1+Math.random()*5;parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:70+Math.random()*40,c:colors[Math.random()*colors.length|0],r:1+Math.random()*2.5})}if(parts.length>650)parts.splice(0,parts.length-650)}function draw(t){ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation='lighter';if(t>next){burst(Math.random()*W,Math.random()*H*.6,22);next=t+1800+Math.random()*800}for(let i=parts.length-1;i>=0;i--){const p=parts[i];p.x+=p.vx;p.y+=p.vy;p.vy+=.025;p.vx*=.99;p.life--;ctx.globalAlpha=Math.min(1,p.life/70);ctx.fillStyle=p.c;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();if(p.life<=0)parts.splice(i,1)}ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';requestAnimationFrame(draw)}if(!reduced)requestAnimationFrame(draw);
 function bigBang(){for(let i=0;i<(reduced?0:7);i++)setTimeout(()=>burst(Math.random()*W,Math.random()*H*.7,75),i*120);if(!reduced){const f=$('flash');f.classList.remove('flash');void f.offsetWidth;f.classList.add('flash')}}
 function syncMusic(){const playing=!track.paused;music.textContent=playing?'♫ MUSIC ON':'♫ MUSIC OFF';music.setAttribute('aria-pressed',String(playing));vinyl.classList.toggle('spinning',playing);$('vinylText').textContent=playing?'YOUR MUSIC · PLAYING':'YOUR MUSIC · TAP TO PLAY'}async function play(){try{track.volume=.55;await track.play()}catch(e){$('vinylText').textContent='TAP TO ENABLE MUSIC'}syncMusic()}// Attempt audio immediately on page opening. Mobile browsers may require a gesture.
-let openingAutoplayPending=true;
-function tryOpeningMusic(){
- if(!openingAutoplayPending)return;
- track.volume=.55;
- const attempt=track.play();
- if(attempt&&typeof attempt.then==='function')attempt.then(()=>{openingAutoplayPending=false;syncMusic()}).catch(()=>{syncMusic()});
- else {openingAutoplayPending=false;syncMusic()}
+// Start music only from a deliberate zipper gesture, rather than attempting autoplay.
+let zipperMusicStarted=false;
+function startZipperMusic(){
+ if(zipperMusicStarted)return;
+ zipperMusicStarted=true;
+ play();
 }
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',tryOpeningMusic,{once:true});else tryOpeningMusic();
-// First guest interaction is the fallback for browsers that block autoplay.
-document.addEventListener('pointerdown',()=>{if(openingAutoplayPending){openingAutoplayPending=false;play()}},{once:true,capture:true});
-document.addEventListener('keydown',()=>{if(openingAutoplayPending){openingAutoplayPending=false;play()}},{once:true,capture:true});
-function toggleMusic(){openingAutoplayPending=false;track.paused?play():track.pause()}music.addEventListener('click',toggleMusic);vinyl.addEventListener('click',toggleMusic);track.addEventListener('play',syncMusic);track.addEventListener('pause',syncMusic);
+function toggleMusic(){zipperMusicStarted=true;track.paused?play():track.pause()}
+music.addEventListener('click',toggleMusic);vinyl.addEventListener('click',toggleMusic);track.addEventListener('play',syncMusic);track.addEventListener('pause',syncMusic);
 
 
 let zipValue=0,zipDragging=false;
 const zipTrack=$('zipperTrack'),zipHandle=$('zipperHandle'),zipProgress=$('zipperProgress'),zipOpened=$('zipperOpened');
 function setZip(value){if(gateTriggered)return;zipValue=Math.max(0,Math.min(100,value));zipProgress.style.width=zipValue+'%';zipHandle.style.left='calc('+zipValue+'% - '+(zipValue*.72)+'px)';zipOpened.style.opacity=String(zipValue/100);zipTrack.setAttribute('aria-valuenow',String(Math.round(zipValue)));zipTrack.setAttribute('aria-valuetext',zipValue>=95?'Zipper open':Math.round(zipValue)+' percent open');if(zipValue>=96)unlockInvitation()}
 function pointerZip(e){const r=zipTrack.getBoundingClientRect();setZip(((e.clientX-r.left-20)/(r.width-55))*100)}
-zipTrack.addEventListener('pointerdown',e=>{zipDragging=true;zipTrack.setPointerCapture(e.pointerId);pointerZip(e)});
+zipTrack.addEventListener('pointerdown',e=>{startZipperMusic();zipDragging=true;zipTrack.setPointerCapture(e.pointerId);pointerZip(e)});
 zipTrack.addEventListener('pointermove',e=>{if(zipDragging)pointerZip(e)});
 zipTrack.addEventListener('pointerup',e=>{if(!zipDragging)return;zipDragging=false;pointerZip(e);if(zipValue<96)setZip(zipValue<35?0:zipValue)});
 zipTrack.addEventListener('pointercancel',()=>{zipDragging=false});
-zipTrack.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowUp'){e.preventDefault();setZip(zipValue+10)}else if(e.key==='ArrowLeft'||e.key==='ArrowDown'){e.preventDefault();setZip(zipValue-10)}else if(e.key==='End'||e.key==='Enter'||e.key===' '){e.preventDefault();setZip(100)}else if(e.key==='Home'){e.preventDefault();setZip(0)}});
-function unlockInvitation(){if(gateTriggered)return;gateTriggered=true;zipProgress.style.width='100%';zipOpened.style.opacity='1';zipTrack.setAttribute('aria-valuenow','100');zipTrack.setAttribute('aria-valuetext','Zipper open');$('zipperPrompt').textContent='ZIPPER OPEN · THE FINAL RALLY AWAITS';gate.classList.add('unzipping');play();setTimeout(bigBang,200);setTimeout(()=>{gate.hidden=true;startGame()},reduced?200:1100)}
-$('hit').addEventListener('click',()=>setZip(100));
+zipTrack.addEventListener('keydown',e=>{if(['ArrowRight','ArrowUp','ArrowLeft','ArrowDown','End','Enter',' ','Home'].includes(e.key))startZipperMusic();if(e.key==='ArrowRight'||e.key==='ArrowUp'){e.preventDefault();setZip(zipValue+10)}else if(e.key==='ArrowLeft'||e.key==='ArrowDown'){e.preventDefault();setZip(zipValue-10)}else if(e.key==='End'||e.key==='Enter'||e.key===' '){e.preventDefault();setZip(100)}else if(e.key==='Home'){e.preventDefault();setZip(0)}});
+function unlockInvitation(){if(gateTriggered)return;gateTriggered=true;zipProgress.style.width='100%';zipOpened.style.opacity='1';zipTrack.setAttribute('aria-valuenow','100');zipTrack.setAttribute('aria-valuetext','Zipper open');$('zipperPrompt').textContent='ZIPPER OPEN · THE FINAL RALLY AWAITS';gate.classList.add('unzipping');setTimeout(bigBang,200);setTimeout(()=>{gate.hidden=true;startGame()},reduced?200:1100)}
+$('hit').addEventListener('click',()=>{startZipperMusic();setZip(100)});
 
 let ballX=0,ballY=0,ballVX=430,ballVY=560,bounceCount=0;
 function startGame(){
  $('challenge').hidden=false;gameAttempt=0;gameActive=true;previousFrame=0;bounceCount=0;
  const court=$('court');ballX=court.clientWidth*.23;ballY=court.clientHeight*.52;
- ballVX=Math.max(390,court.clientWidth*1.45);ballVY=Math.max(510,court.clientHeight*.92);
+ ballVX=Math.max(390,court.clientWidth*1.45)*0.85;ballVY=Math.max(510,court.clientHeight*.92)*0.85;
  $('gameMessage').textContent='FAST RALLY — TAP STRIKE!';$('attempts').textContent='CHANCE 1 / 3';$('gameStrike').disabled=false;
  $('gameStrike').focus({preventScroll:true});cancelAnimationFrame(gameFrame);gameFrame=requestAnimationFrame(animateGame);
 }
@@ -259,7 +255,7 @@ function animateGame(t){
  if(ballX<radius){ballX=radius+(radius-ballX);ballVX=Math.abs(ballVX);bounceCount++}
  if(ballY>maxY){ballY=maxY-(ballY-maxY);ballVY=-Math.abs(ballVY);bounceCount++}
  if(ballY<radius){ballY=radius+(radius-ballY);ballVY=Math.abs(ballVY);bounceCount++}
- if(bounceCount>0&&bounceCount%4===0){const speed=1.05;ballVX=Math.sign(ballVX)*Math.min(1050,Math.abs(ballVX)*speed);ballVY=Math.sign(ballVY)*Math.min(1200,Math.abs(ballVY)*speed);bounceCount++}
+ if(bounceCount>0&&bounceCount%4===0){const speed=1.05;ballVX=Math.sign(ballVX)*Math.min(1050*0.85,Math.abs(ballVX)*speed);ballVY=Math.sign(ballVY)*Math.min(1200*0.85,Math.abs(ballVY)*speed);bounceCount++}
  ball.style.left=ballX+'px';ball.style.top=ballY+'px';gameFrame=requestAnimationFrame(animateGame);
 }
 function attemptStrike(){if(!gameActive)return;gameAttempt++;const ball=$('gameBall').getBoundingClientRect(),target=$('target').getBoundingClientRect();const hit=Math.hypot((ball.left+ball.width/2)-(target.left+target.width/2),(ball.top+ball.height/2)-(target.top+target.height/2))<target.width*.66;if(hit){gameActive=false;cancelAnimationFrame(gameFrame);$('gameMessage').textContent='PERFECT SHOT!';$('gameStrike').disabled=true;bigBang();setTimeout(showInvitation,reduced?100:1000)}else if(gameAttempt>=3){gameActive=false;cancelAnimationFrame(gameFrame);$('gameMessage').textContent='PRO Pickler !';$('gameStrike').disabled=true;setTimeout(showInvitation,reduced?100:1300)}else{$('attempts').textContent='CHANCE '+(gameAttempt+1)+' / 3';$('gameMessage').textContent='SO CLOSE! TIME YOUR NEXT SHOT';burst(W*.5,H*.5,25)}}$('gameStrike').addEventListener('click',attemptStrike);$('court').addEventListener('click',attemptStrike);
