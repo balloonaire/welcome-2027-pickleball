@@ -1,11 +1,24 @@
-# OGX WELCOME 2027 — V8 1980s Jazz MP3 Edition
+# OGX WELCOME 2027 — Cinematic Golden Rally V9
 
-Files required together in GitHub repository root: `index.html`, `ogx_1980s_jazz.mp3`.
+**A completely redesigned full-screen mobile invitation** using the supplied pickleball photograph, cinematic dark-gold art direction, animated paddle strike, flying neon pickleball, light flash, fireworks and an expandable single invitation card.
 
-The original 1980s-inspired smooth-jazz instrumental MP3 is about 37 seconds long and loops continuously. It uses synthesized electric piano, sax-like lead, walking bass and soft drums; it is not a recording by an existing artist.
+## Music
+`ogx_midnight_jazz.mp3` is a **newly composed, original 37-second jazz lounge instrumental** with vibraphone-style lead, electric-piano chords, walking upright-style bass and soft brushed drums. Loops continuously. Not a licensed commercial jazz recording. Music begins when the guest taps to open the card, respecting mobile autoplay restrictions.
 
-Opening: tap **HIT THE BALL · OPEN CARD** to strike the pickleball and reveal the single invitation card. Music starts on this tap (subject to device audio settings) and can be toggled OFF/ON.
+## Event
+- Sunday, 27 December 2026, evening (exact time to be confirmed)
+- BASE, Petaling Jaya
+- Friendly rallies, mini activity and snacks
+- Top fancy dresser — any creative colour
+- RSVP via WhatsApp: +60 12-687 7643 (`60126877643`)
 
-RSVP via WhatsApp: +60 12-687 7643. Event at BASE, Petaling Jaya, Sunday 27 December 2026, evening. Friendly rallies, mini activity, snacks. Dress: top fancy dresser of any creative color.
+## Upload to GitHub
+Upload **all four files** to the root of `main` in https://github.com/balloonaire/welcome-2027-pickleball:
+- `index.html`
+- `pickleball_hero.webp`
+- `ogx_midnight_jazz.mp3`
+- `README.md`
 
-Upload `index.html` and `ogx_1980s_jazz.mp3` to the root of https://github.com/balloonaire/welcome-2027-pickleball, then commit. Keep both files together: without the MP3, background music will not play.
+After commit, the expected site is https://balloonaire.github.io/welcome-2027-pickleball/
+
+For accessibility, motion is reduced for visitors who have requested reduced motion. Actual audio playback and WhatsApp delivery should be checked on a real phone.
