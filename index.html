@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#080b14"><title>OGX • The Golden Rally • Welcome 2027</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#080b14"><title>OGX Holiday Activity • Rally 2026 • Interactive Zipper</title>
 <style>
 :root{--gold:#f9d69b;--ivory:#fff9ec;--ink:#080b14}*{box-sizing:border-box}html{background:var(--ink);scroll-behavior:smooth}body{margin:0;color:var(--ivory);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}button,input{font:inherit}button{cursor:pointer}canvas{position:fixed;inset:0;pointer-events:none;z-index:9}#flash{position:fixed;inset:0;background:#fff;z-index:40;opacity:0;pointer-events:none}.flash{animation:flash .7s ease-out}@keyframes flash{20%{opacity:.8}100%{opacity:0}}
 .stage{position:relative;min-height:100svh;overflow:hidden;isolation:isolate;display:flex;align-items:center;justify-content:center;padding:calc(env(safe-area-inset-top) + 18px) 14px calc(env(safe-area-inset-bottom) + 22px);background:radial-gradient(circle at 52% 50%,#4b2638 0,#1a1427 47%,#080b14 90%)}
@@ -111,6 +111,33 @@ form{margin-top:22px;text-align:left}label{display:block;font-size:10px;letter-s
 @keyframes zipperBloom{to{transform:scale(1.11);filter:brightness(1.3)}}
 @media(max-width:550px){.zipperPhotos img{object-position:52% center}.zipperGate{padding-left:22px;padding-right:22px}.zipperControls{padding:15px 12px}.zipperHeader{padding-top:5vh}}
 @media(prefers-reduced-motion:reduce){.zipperGate.unzipping .zipperPhotos{animation:none}.zipperOpened{transition:none}}
+
+/* V17: direct-on-photo zipper, full-screen mobile court */
+.zipperGate{padding:0;justify-content:initial}
+.zipperHeader{position:absolute;z-index:5;top:calc(env(safe-area-inset-top) + 5vh);left:16px;right:16px;pointer-events:none}
+.zipperDirect{position:absolute;z-index:6;top:45%;left:5%;width:90%;height:90px;touch-action:none;cursor:grab;outline-offset:6px;background:transparent;border:0;user-select:none}
+.zipperDirect:focus-visible{outline:3px solid #ffe6ac}
+.zipperDirect .zipperProgress{display:none}
+.zipperDirect .zipperHandle{position:absolute;left:0;top:50%;transform:translate(-10%,-50%);width:clamp(48px,13vw,75px);height:clamp(75px,20vw,108px);border-radius:18px 18px 25px 25px;border:3px solid #ffe8ad;background:linear-gradient(145deg,#ffdf8d,#b36a1d 48%,#ffe5a1);box-shadow:0 4px 20px #000a,0 0 22px #ffd277b8;display:grid;place-items:center;color:#48170a;pointer-events:none}
+.zipperPull{writing-mode:vertical-rl;font-family:Georgia,serif;font-size:clamp(9px,2.6vw,13px);letter-spacing:.08em;font-weight:900}
+.zipperFooter{position:absolute;z-index:7;bottom:calc(env(safe-area-inset-bottom) + 5vh);left:22px;right:22px;display:flex;flex-direction:column;align-items:center;gap:10px;text-shadow:0 2px 9px #000}
+.zipperFooter .zipperPrompt{font-size:clamp(13px,3.4vw,19px)}
+.zipperFooter .zipperHint{color:#fff2d5;font-size:clamp(11px,2.7vw,14px)}
+.zipperFooter .zipperTap{background:#3d0817bb}
+.challenge{position:fixed;inset:0;width:100vw;height:100dvh;min-height:100svh;overflow:hidden;padding:0;display:block;background:#143d49}
+.challengeTop{position:absolute;z-index:8;top:calc(env(safe-area-inset-top) + 18px);left:18px;right:18px;width:auto;max-width:none;display:flex;align-items:center;gap:10px;background:#0b2238bd;border:1px solid #ffe0a18a;border-radius:14px;padding:10px 12px;backdrop-filter:blur(6px)}
+.challenge h2{position:absolute;z-index:5;top:calc(env(safe-area-inset-top) + 87px);left:0;right:0;font-size:clamp(27px,7vw,50px);pointer-events:none}
+.challenge p{position:absolute;z-index:5;top:calc(env(safe-area-inset-top) + 143px);left:50%;width:90%;transform:translateX(-50%);max-width:520px;pointer-events:none;text-shadow:0 2px 6px #000}
+.challenge .court{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:0;box-shadow:none;overflow:hidden;background:linear-gradient(125deg,#164654,#0a313c);touch-action:manipulation}
+.challenge .court:before,.challenge .court:after{left:5%;right:5%;border-color:#fff8}.challenge .court:before{top:22%}.challenge .court:after{bottom:22%}
+.challenge .net{left:0;right:0;top:50%;bottom:auto;border-left:0;border-top:5px dotted #f4f3e7bb}
+.challenge .courtLine.vertical{position:absolute;left:50%;top:0;bottom:0;border-left:2px solid #ffffff6e}
+.challenge .target{top:31%;right:12%;width:clamp(66px,19vw,110px);height:clamp(66px,19vw,110px)}
+.challenge .gameBall{top:50%;left:50%;width:clamp(35px,10vw,62px);height:clamp(35px,10vw,62px);will-change:left,top;box-shadow:0 0 18px #e8ff6c,0 0 45px #d9fc4d7c}
+.challengeBottom{position:absolute;z-index:6;bottom:calc(env(safe-area-inset-bottom) + 111px);left:16px;right:16px;width:auto;max-width:none;display:flex;justify-content:space-between;background:#102a39cb;border-radius:10px;padding:12px 10px}
+.challenge .gameStrike{position:absolute;z-index:7;bottom:calc(env(safe-area-inset-bottom) + 25px);left:50%;transform:translateX(-50%);min-width:190px}
+.challenge .court{cursor:crosshair}
+@media(max-width:550px){.zipperDirect{top:44%;left:6%;width:88%}.challenge h2{top:calc(env(safe-area-inset-top) + 84px)}.challenge p{top:calc(env(safe-area-inset-top) + 133px)}}
 </style></head><body>
 <div class="screen-frame" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><i class="rail l"></i><i class="rail r"></i></div><canvas id="fx"></canvas><div id="flash"></div><button class="sound" id="music" aria-pressed="false">♫ MUSIC OFF</button>
 <div class="zipperGate" id="gate" role="region" aria-label="Interactive zipper invitation opener">
@@ -120,14 +147,13 @@ form{margin-top:22px;text-align:left}label{display:block;font-size:10px;letter-s
     <div class="zipperTint"></div>
   </div>
   <div class="zipperHeader"><span>OGX TRAINER CLUB · HOLIDAY ACTIVITY</span><strong>RALLY 2026</strong><small>THE END OF A RALLY 2026</small></div>
-  <div class="zipperControls"><div class="zipperPrompt" id="zipperPrompt">SLIDE THE GOLD ZIPPER TO UNLOCK YOUR INVITATION</div>
-    <div class="zipperTrack" id="zipperTrack" role="slider" tabindex="0" aria-label="Slide zipper open" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="Zipper closed">
-      <div class="zipperProgress" id="zipperProgress"></div><div class="zipperHandle" id="zipperHandle" aria-hidden="true">✦</div><span class="zipperEnd" aria-hidden="true">OPEN ✧</span>
-    </div><button class="zipperTap" id="hit" type="button">OPEN ZIPPER</button>
-    <p class="zipperHint">Drag right, use arrow keys, or tap OPEN ZIPPER</p>
+  <div class="zipperDirect" id="zipperTrack" role="slider" tabindex="0" aria-label="Drag the gold zipper directly on the bag to open it" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="Zipper closed">
+    <div class="zipperProgress" id="zipperProgress"></div>
+    <div class="zipperHandle" id="zipperHandle" aria-hidden="true"><span class="zipperPull">ZIP</span></div>
   </div>
+  <div class="zipperFooter"><div class="zipperPrompt" id="zipperPrompt">DRAG THE GOLD ZIPPER ACROSS THE BAG</div><p class="zipperHint">Touch the gold zipper pull and drag left to right</p><button class="zipperTap" id="hit" type="button">OPEN ZIPPER</button></div>
 </div>
-<section class="challenge" id="challenge" hidden aria-label="Pickleball mini challenge"><div class="challengeTop"><span>THE FINAL RALLY · MINI CHALLENGE</span><button id="skip" type="button">SKIP TO INVITATION ›</button></div><h2>ONE LAST SHOT</h2><p>Time your strike when the moving ball reaches the glowing target. Three chances!</p><div class="court" id="court" role="img" aria-label="Moving pickleball and glowing target"><div class="net"></div><div class="target" id="target"></div><div class="gameBall" id="gameBall"></div></div><div class="challengeBottom"><span id="attempts" aria-live="polite">CHANCE 1 / 3</span><span id="gameMessage" aria-live="polite">READY TO RALLY?</span></div><button class="gameStrike" id="gameStrike" type="button">STRIKE</button></section><main class="stage" id="stage"><div class="photo"></div><div class="halo"></div><article class="card" id="card"><div class="mini">OGX TRAINER CLUB · HOLIDAY ACTIVITY</div><div class="overline">The end of a rally 2026</div><h1 class="heroTitle">RALLY</h1><div class="year">2026</div><div class="tag">THAT MOMENT</div><div class="line"></div><p class="intro">A little pickleball. A lot of sparkle.<br>The last moment.</p><div class="cardActions"><button class="revealBtn" id="reveal">✦ REVEAL THE CELEBRATION ✦</button><button class="confettiBtn" id="celebrate" type="button">✧ SPARKLE</button></div>
+<section class="challenge" id="challenge" hidden aria-label="Pickleball mini challenge"><div class="challengeTop"><span>THE FINAL RALLY · MINI CHALLENGE</span><button id="skip" type="button">SKIP TO INVITATION ›</button></div><h2>ONE LAST SHOT</h2><p>The entire phone is your court! The ball bounces rapidly off every edge. Tap STRIKE when it reaches the glowing target — three chances!</p><div class="court" id="court" aria-label="Full-screen pickleball court"><div class="net"></div><div class="target" id="target"></div><div class="gameBall" id="gameBall"></div><div class="courtLine horizontal"></div><div class="courtLine vertical"></div></div><div class="challengeBottom"><span id="attempts" aria-live="polite">CHANCE 1 / 3</span><span id="gameMessage" aria-live="polite">READY TO RALLY?</span></div><button class="gameStrike" id="gameStrike" type="button">STRIKE</button></section><main class="stage" id="stage"><div class="photo"></div><div class="halo"></div><article class="card" id="card"><div class="mini">OGX TRAINER CLUB · HOLIDAY ACTIVITY</div><div class="overline">The end of a rally 2026</div><h1 class="heroTitle">RALLY</h1><div class="year">2026</div><div class="tag">THAT MOMENT</div><div class="line"></div><p class="intro">A little pickleball. A lot of sparkle.<br>The last moment.</p><div class="cardActions"><button class="revealBtn" id="reveal">✦ REVEAL THE CELEBRATION ✦</button><button class="confettiBtn" id="celebrate" type="button">✧ SPARKLE</button></div>
 <div class="detail" id="detail"><div class="detailInner"><div class="sectionTitle">THE EVENING'S LINE-UP</div><p class="tapPrompt">Tap each moment to reveal its details.</p><details class="entry moment"><summary><span class="symbol">📅</span><b>WHEN</b><span class="momentPlus">＋</span></summary><div class="momentBody">Sunday, 27 December 2026 · Evening (time TBA)</div></details><details class="entry moment"><summary><span class="symbol">📍</span><b>WHERE</b><span class="momentPlus">＋</span></summary><div class="momentBody">BASE, Petaling Jaya</div></details><details class="entry moment"><summary><span class="symbol">🏓</span><b>WHAT TO EXPECT</b><span class="momentPlus">＋</span></summary><div class="momentBody">Friendly rallies, mini activity &amp; bring childhood snacks or tiny titbits</div></details><details class="entry moment"><summary><span class="symbol">✨</span><b>DRESS VIBE</b><span class="momentPlus">＋</span></summary><div class="momentBody">Top fancy dresser — any creative colour!</div></details>
 <div class="sectionTitle">LET'S DO THIS!</div><form id="form"><label>YOUR NAME<input id="name" name="name" required maxlength="80" autocomplete="name" placeholder="Enter your name"></label><label>CONTACT NUMBER<input id="phone" name="phone" required maxlength="25" autocomplete="tel" inputmode="tel" placeholder="+60 12 345 6789"></label><button class="rsvpBtn" type="submit">✦ RSVP VIA WHATSAPP ✦</button><div id="status" role="status" aria-live="polite"></div></form></div></div><div class="foot">FIND YOUR COURT · FIND YOUR IDENTITY · LOVE YOUR GAME</div></article></main>
 <div class="vinylWidget"><button class="vinyl" id="vinyl" type="button" aria-label="Play or pause background music"><span class="vinylCenter">♫</span></button><span id="vinylText">YOUR MUSIC · TAP TO PLAY</span></div>
@@ -142,8 +168,8 @@ function syncMusic(){const playing=!track.paused;music.textContent=playing?'♫ 
 
 let zipValue=0,zipDragging=false;
 const zipTrack=$('zipperTrack'),zipHandle=$('zipperHandle'),zipProgress=$('zipperProgress'),zipOpened=$('zipperOpened');
-function setZip(value){if(gateTriggered)return;zipValue=Math.max(0,Math.min(100,value));zipProgress.style.width=zipValue+'%';zipHandle.style.left='calc('+zipValue+'% - '+(zipValue*.6)+'px)';zipOpened.style.opacity=String(zipValue/100);zipTrack.setAttribute('aria-valuenow',String(Math.round(zipValue)));zipTrack.setAttribute('aria-valuetext',zipValue>=95?'Zipper open':Math.round(zipValue)+' percent open');if(zipValue>=96)unlockInvitation()}
-function pointerZip(e){const r=zipTrack.getBoundingClientRect();setZip(((e.clientX-r.left-30)/(r.width-60))*100)}
+function setZip(value){if(gateTriggered)return;zipValue=Math.max(0,Math.min(100,value));zipProgress.style.width=zipValue+'%';zipHandle.style.left='calc('+zipValue+'% - '+(zipValue*.72)+'px)';zipOpened.style.opacity=String(zipValue/100);zipTrack.setAttribute('aria-valuenow',String(Math.round(zipValue)));zipTrack.setAttribute('aria-valuetext',zipValue>=95?'Zipper open':Math.round(zipValue)+' percent open');if(zipValue>=96)unlockInvitation()}
+function pointerZip(e){const r=zipTrack.getBoundingClientRect();setZip(((e.clientX-r.left-20)/(r.width-55))*100)}
 zipTrack.addEventListener('pointerdown',e=>{zipDragging=true;zipTrack.setPointerCapture(e.pointerId);pointerZip(e)});
 zipTrack.addEventListener('pointermove',e=>{if(zipDragging)pointerZip(e)});
 zipTrack.addEventListener('pointerup',e=>{if(!zipDragging)return;zipDragging=false;pointerZip(e);if(zipValue<96)setZip(zipValue<35?0:zipValue)});
@@ -152,8 +178,29 @@ zipTrack.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowU
 function unlockInvitation(){if(gateTriggered)return;gateTriggered=true;zipProgress.style.width='100%';zipOpened.style.opacity='1';zipTrack.setAttribute('aria-valuenow','100');zipTrack.setAttribute('aria-valuetext','Zipper open');$('zipperPrompt').textContent='ZIPPER OPEN · THE FINAL RALLY AWAITS';gate.classList.add('unzipping');play();setTimeout(bigBang,200);setTimeout(()=>{gate.hidden=true;startGame()},reduced?200:1100)}
 $('hit').addEventListener('click',()=>setZip(100));
 
-function startGame(){$('challenge').hidden=false;gameAttempt=0;gameActive=true;ballPosition=0;ballDirection=1;previousFrame=0;$('gameMessage').textContent='READY TO RALLY?';$('attempts').textContent='CHANCE 1 / 3';$('gameStrike').disabled=false;$('gameStrike').focus({preventScroll:true});cancelAnimationFrame(gameFrame);gameFrame=requestAnimationFrame(animateGame)}function animateGame(t){if(!gameActive)return;if(!previousFrame)previousFrame=t;const delta=Math.min((t-previousFrame)/1000,.05);previousFrame=t;ballPosition+=ballDirection*delta*.64;if(ballPosition>=1){ballPosition=1;ballDirection=-1}else if(ballPosition<=0){ballPosition=0;ballDirection=1}const court=$('court'),ball=$('gameBall');const margin=24;ball.style.left=(margin+ballPosition*(court.clientWidth-margin*2))+'px';ball.style.top='50%';gameFrame=requestAnimationFrame(animateGame)}
-function attemptStrike(){if(!gameActive)return;gameAttempt++;const ball=$('gameBall').getBoundingClientRect(),target=$('target').getBoundingClientRect();const hit=Math.abs((ball.left+ball.width/2)-(target.left+target.width/2))<target.width*.52;if(hit){gameActive=false;cancelAnimationFrame(gameFrame);$('gameMessage').textContent='PERFECT SHOT!';$('gameStrike').disabled=true;bigBang();setTimeout(showInvitation,reduced?100:1000)}else if(gameAttempt>=3){gameActive=false;cancelAnimationFrame(gameFrame);$('gameMessage').textContent='GREAT TRY — YOUR INVITATION AWAITS!';$('gameStrike').disabled=true;setTimeout(showInvitation,reduced?100:1300)}else{$('attempts').textContent='CHANCE '+(gameAttempt+1)+' / 3';$('gameMessage').textContent='SO CLOSE! TIME YOUR NEXT SHOT';burst(W*.5,H*.5,25)}}$('gameStrike').addEventListener('click',attemptStrike);$('court').addEventListener('click',attemptStrike);
+let ballX=0,ballY=0,ballVX=430,ballVY=560,bounceCount=0;
+function startGame(){
+ $('challenge').hidden=false;gameAttempt=0;gameActive=true;previousFrame=0;bounceCount=0;
+ const court=$('court');ballX=court.clientWidth*.23;ballY=court.clientHeight*.52;
+ ballVX=Math.max(390,court.clientWidth*1.45);ballVY=Math.max(510,court.clientHeight*.92);
+ $('gameMessage').textContent='FAST RALLY — TAP STRIKE!';$('attempts').textContent='CHANCE 1 / 3';$('gameStrike').disabled=false;
+ $('gameStrike').focus({preventScroll:true});cancelAnimationFrame(gameFrame);gameFrame=requestAnimationFrame(animateGame);
+}
+function animateGame(t){
+ if(!gameActive)return;
+ if(!previousFrame)previousFrame=t;
+ const delta=Math.min((t-previousFrame)/1000,.04);previousFrame=t;
+ const court=$('court'),ball=$('gameBall'),radius=ball.offsetWidth/2;
+ const maxX=Math.max(radius,court.clientWidth-radius),maxY=Math.max(radius,court.clientHeight-radius);
+ ballX+=ballVX*delta;ballY+=ballVY*delta;
+ if(ballX>maxX){ballX=maxX-(ballX-maxX);ballVX=-Math.abs(ballVX);bounceCount++}
+ if(ballX<radius){ballX=radius+(radius-ballX);ballVX=Math.abs(ballVX);bounceCount++}
+ if(ballY>maxY){ballY=maxY-(ballY-maxY);ballVY=-Math.abs(ballVY);bounceCount++}
+ if(ballY<radius){ballY=radius+(radius-ballY);ballVY=Math.abs(ballVY);bounceCount++}
+ if(bounceCount>0&&bounceCount%4===0){const speed=1.05;ballVX=Math.sign(ballVX)*Math.min(1050,Math.abs(ballVX)*speed);ballVY=Math.sign(ballVY)*Math.min(1200,Math.abs(ballVY)*speed);bounceCount++}
+ ball.style.left=ballX+'px';ball.style.top=ballY+'px';gameFrame=requestAnimationFrame(animateGame);
+}
+function attemptStrike(){if(!gameActive)return;gameAttempt++;const ball=$('gameBall').getBoundingClientRect(),target=$('target').getBoundingClientRect();const hit=Math.hypot((ball.left+ball.width/2)-(target.left+target.width/2),(ball.top+ball.height/2)-(target.top+target.height/2))<target.width*.66;if(hit){gameActive=false;cancelAnimationFrame(gameFrame);$('gameMessage').textContent='PERFECT SHOT!';$('gameStrike').disabled=true;bigBang();setTimeout(showInvitation,reduced?100:1000)}else if(gameAttempt>=3){gameActive=false;cancelAnimationFrame(gameFrame);$('gameMessage').textContent='GREAT TRY — YOUR INVITATION AWAITS!';$('gameStrike').disabled=true;setTimeout(showInvitation,reduced?100:1300)}else{$('attempts').textContent='CHANCE '+(gameAttempt+1)+' / 3';$('gameMessage').textContent='SO CLOSE! TIME YOUR NEXT SHOT';burst(W*.5,H*.5,25)}}$('gameStrike').addEventListener('click',attemptStrike);$('court').addEventListener('click',attemptStrike);
 function showInvitation(){if($('challenge').hidden)return;gameActive=false;cancelAnimationFrame(gameFrame);$('challenge').hidden=true;stage.classList.add('active');$('reveal').focus({preventScroll:true});bigBang()}$('skip').addEventListener('click',showInvitation);
 $('reveal').addEventListener('click',()=>{opened=!opened;card.classList.toggle('opened',opened);$('reveal').textContent=opened?'✦ HIDE CELEBRATION DETAILS ✦':'✦ REVEAL THE CELEBRATION ✦';if(opened){bigBang();setTimeout(()=>card.scrollTo({top:card.scrollHeight,behavior:'smooth'}),500)}else card.scrollTo({top:0,behavior:'smooth'})});$('celebrate').addEventListener('click',bigBang);document.querySelectorAll('details.moment').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)burst(W*.5,H*.45,25)}));
 $('form').addEventListener('submit',e=>{e.preventDefault();const name=$('name').value.trim(),phone=$('phone').value.trim(),status=$('status');if(!name||!/^[+\d\s().-]{7,25}$/.test(phone)||phone.replace(/\D/g,'').length<7){status.textContent='Please enter your name and a valid contact number.';return}const msg=['🏓 *OGX HOLIDAY ACTIVITY — RALLY 2026 RSVP*','📅 Sunday, 27 December 2026 · Evening (time TBA)','📍 BASE, Petaling Jaya','👤 Name: '+name,'📱 Contact: '+phone,'','Let’s do THIS! I would love to join the holiday activity.'].join('\n');const url='https://wa.me/60126877643?text='+encodeURIComponent(msg);const w=window.open(url,'_blank','noopener,noreferrer');if(!w)location.href=url;status.textContent='WhatsApp opened. Tap Send to complete your RSVP.'});
