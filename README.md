@@ -1,5 +1,8 @@
-# OGXTC Cheer — Rally 2026 V20: Opened-Bag Pocket Scroll
+# OGXTC Cheer V21 — Opening Music and Game Text
 
-The expandable **MANA MAIN !** information section now uses `zipper_open.webp` as its own background. The scroll-down event details and RSVP are set inside a softly curved, stitched red leather pocket, with readable translucent detail rows. The rest of the V19 experience (drag zipper, full-screen pickleball game, music, fireworks, date 27 Dec 2026 at 6 PM, venue BASE Petaling Jaya, name and pax RSVP to +60 12 687 7643) is retained.
+- Attempts to play `rally_background_music.mp3` automatically when the opening page loads. **Note:** iOS Safari, Chrome, and other browsers often block unmuted autoplay until the first user interaction; in those browsers, the first touch or key press starts music. The music toggle and vinyl controller remain.
+- Game third-attempt message: **PRO Pickler !**
+- Removed **FIND YOUR COURT · FIND YOUR IDENTITY · LOVE YOUR GAME** from the invitation (page 2).
+- Preserves the zipper bag images, full-screen pickleball game, red bag-pocket scroll design, event information, and WhatsApp RSVP.
 
-Upload all five files to the root of the main branch at https://github.com/balloonaire/welcome-2027-pickleball.
+Upload all five files to the repository root: `index.html`, `README.md`, `rally_background_music.mp3`, `zipper_closed.webp`, `zipper_open.webp`.
