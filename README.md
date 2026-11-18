@@ -1,7 +1,13 @@
-# OGXTC Cheer V27 — Zipper-touch audio fallback
+# OGXTC Cheer V28 — Reliable music start
 
-The invitation attempts to play the supplied MP3 on page load. If a mobile browser blocks audible autoplay, the **first touch of the gold zipper** immediately retries playback in the user gesture event. Keyboard zipper interaction also retries playback. Music ON/OFF remains available, and a manual pause is respected. Browser autoplay policies cannot be overridden.
+Changes:
+- The supplied `rally_background_music.mp3` is preloaded and playback is attempted when the front page loads.
+- When audible autoplay is rejected, a tasteful **♫ TAP TO BEGIN** button appears over the bag without blocking the zipper.
+- First touch on the gold zipper calls `audio.play()` directly in the `pointerdown` handler. Keyboard zipper interaction is also supported.
+- The fallback disappears when music starts; the user can still pause/resume with the music controls. Explicit manual pause is respected.
+- The mini-game navigation button now says **INVITATION** (no 'SKIP TO').
+- All V27 bag images, mini-game, awards, 30% pop-out, pull-up invitation, event details and WhatsApp RSVP remain.
 
-Preserves V26: red bag images, full-screen pickleball (30% pop-out), pull-up invitation, event details, number of guests including self, WhatsApp RSVP.
+Important: Android and iOS browser autoplay policies cannot be bypassed. Guest interaction is the reliable fallback.
 
-Upload all five files to the root of your GitHub Pages repository.
+Publish all five files to the root of https://github.com/balloonaire/welcome-2027-pickleball.
