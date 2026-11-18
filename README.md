@@ -1,11 +1,5 @@
-# OGXTC Cheer — Holiday Activity 2026 (V19)
+# OGXTC Cheer — Rally 2026 V20: Opened-Bag Pocket Scroll
 
-- Removed large white RALLY heading.
-- Changed OGX TRAINER CLUB · HOLIDAY ACTIVITY to OGXTC CHEER.
-- Sunday, 27 December 2026, **6:00 PM start**.
-- RSVP form: **REAL NAME LAH** and **HOW MANY HANDS/PAX** (1–50). No guest phone field.
-- WhatsApp RSVP remains directed to **+60 12 687 7643**, now includes guest name and pax count.
-- Removed full-screen gold frame and outlined invitation card. Content blends into the opened red bag pocket photograph.
-- Preserved draggable zipper, full-screen pickleball game, MANA MAIN ! button, sparkle control and uploaded looping background MP3.
+The expandable **MANA MAIN !** information section now uses `zipper_open.webp` as its own background. The scroll-down event details and RSVP are set inside a softly curved, stitched red leather pocket, with readable translucent detail rows. The rest of the V19 experience (drag zipper, full-screen pickleball game, music, fireworks, date 27 Dec 2026 at 6 PM, venue BASE Petaling Jaya, name and pax RSVP to +60 12 687 7643) is retained.
 
-Upload the five files to the root of the GitHub Pages repository.
+Upload all five files to the root of the main branch at https://github.com/balloonaire/welcome-2027-pickleball.
