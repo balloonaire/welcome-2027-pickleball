@@ -1,24 +1,20 @@
-# OGX WELCOME 2027 — Cinematic Golden Rally V9
+# OGX WELCOME 2027 — Cinematic Golden Rally V10
 
-**A completely redesigned full-screen mobile invitation** using the supplied pickleball photograph, cinematic dark-gold art direction, animated paddle strike, flying neon pickleball, light flash, fireworks and an expandable single invitation card.
+Updates:
+- Removed OGX text from the opening paddle.
+- Replaced illustrated SVG paddle with a realistic photographic paddle cut out from the supplied pickleball photograph (`real_pickleball_paddle.png`).
+- Added a gold art-deco ornamental border around the **entire mobile viewport**, with corner accents, inner trim and side rails.
+- Opening button now says only **STRIKE**.
+- Preserved the invitation's reveal, fireworks, jazz MP3, event details and WhatsApp RSVP to +60 12-687 7643.
 
-## Music
-`ogx_midnight_jazz.mp3` is a **newly composed, original 37-second jazz lounge instrumental** with vibraphone-style lead, electric-piano chords, walking upright-style bass and soft brushed drums. Loops continuously. Not a licensed commercial jazz recording. Music begins when the guest taps to open the card, respecting mobile autoplay restrictions.
-
-## Event
-- Sunday, 27 December 2026, evening (exact time to be confirmed)
-- BASE, Petaling Jaya
-- Friendly rallies, mini activity and snacks
-- Top fancy dresser — any creative colour
-- RSVP via WhatsApp: +60 12-687 7643 (`60126877643`)
-
-## Upload to GitHub
-Upload **all four files** to the root of `main` in https://github.com/balloonaire/welcome-2027-pickleball:
+## Publish on GitHub Pages
+Upload all five files to the root of your existing `main` branch:
 - `index.html`
+- `real_pickleball_paddle.png` (new)
 - `pickleball_hero.webp`
 - `ogx_midnight_jazz.mp3`
 - `README.md`
 
-After commit, the expected site is https://balloonaire.github.io/welcome-2027-pickleball/
+Website: https://balloonaire.github.io/welcome-2027-pickleball/
 
-For accessibility, motion is reduced for visitors who have requested reduced motion. Actual audio playback and WhatsApp delivery should be checked on a real phone.
+Do not delete the image or MP3 files; the HTML references them by filename.
