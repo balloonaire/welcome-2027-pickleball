@@ -1,12 +1,9 @@
-# OGX Holiday Activity — Rally 2026 V17
-## New interaction
-- Drag the gold zipper pull **directly over the red bag photograph** (no separate slider track).
-- A closed-to-open bag image transition follows the drag.
-- A fallback OPEN ZIPPER button and keyboard slider support remain.
-- After opening, the **entire mobile viewport becomes the pickleball court**, not a boxed mini-court.
-- The glowing ball moves diagonally, bounces off all four edges and accelerates as the rally continues.
-- Tap STRIKE (or tap the court) when the ball reaches the target; three chances, or SKIP TO INVITATION.
-- Preserve Rally 2026 invitation, fireworks, looping uploaded MP3, and WhatsApp RSVP +60 12 687 7643.
+# OGX Holiday Activity — Rally 2026 V18
 
-## Publish
-Upload the five files in this ZIP to the main branch root of https://github.com/balloonaire/welcome-2027-pickleball.
+Changes from V17:
+- The invitation background now uses the **interior of the red bag**, based on `zipper_open.webp`, with subtle overlays that keep text legible.
+- **REVEAL THE CELEBRATION** is now **MANA MAIN !**; the collapse label is **TUTUP DULU**.
+- Sparkle button is now a small, refined circular gold ✦ icon with an accessible label.
+- Preserves direct zipper drag, full-screen pickleball challenge, original uploaded looping music, RSVP via WhatsApp to +60 12 687 7643 and all event details.
+
+Upload all five files to the root of the GitHub Pages repository. The background photo is a real CSS image, not an external embed.
