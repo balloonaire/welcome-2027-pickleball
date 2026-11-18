@@ -1,15 +1,15 @@
-# OGXTC Cheer V30 — Pickleball Breakout: Golden Impact
+# OGXTC Cheer V31 — Invisible Music Activation
 
-Built on V29, retaining both red bag images, supplied MP3, 15%-slower ball, event information, INVITATION bypass, MANA MAIN !, scratch surprise, Golden Ticket, and WhatsApp RSVP to +60 12 687 7643.
+Based on V30 Golden Impact. Preserves the bag images, uploaded soundtrack, full-screen game, Golden Impact, pocket reveal, golden ticket, date/time and WhatsApp RSVP.
 
-## New effects
-- Ball occasionally scales to exactly **130%** of normal size, with directional lighting and a moving shadow.
-- Every STRIKE triggers the existing impact ring.
-- A **successful** STRIKE triggers a brief full-screen animated golden crack, light burst and opening-court illusion (~0.86 seconds) before the award and secret pocket.
-- `prefers-reduced-motion` skips the golden animation and proceeds to the award.
+- Attempts autoplay on opening page.
+- If audible autoplay is blocked, a small pulsing ♫ icon appears, not a large TAP TO BEGIN button.
+- First pointer/touch/keyboard gesture anywhere in the invitation retries `audio.play()` synchronously.
+- A deliberate MUSIC OFF choice is respected; further gestures do not restart playback.
+- Music ON/OFF and manual ♫ control remain.
+- Mobile browsers can still block audible autoplay until a qualifying interaction.
 
-## Publishing
-Upload all five files to the repository root at https://github.com/balloonaire/welcome-2027-pickleball.
+Publish all five files to the root of https://github.com/balloonaire/welcome-2027-pickleball.
 
-## Browser notes
-Music attempts autoplay and retries on first zipper touch; audible autoplay may be blocked by mobile browser policies. Test on a real Samsung Note20 Ultra before distributing. Rights to included bag photographs and MP3 must be confirmed.
+## Venue update (V32)
+Pickleminded or BASE (TBD on numbers), Petaling Jaya. This tentative venue is shown in the event details, WhatsApp RSVP and Golden Ticket.
